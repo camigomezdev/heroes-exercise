@@ -1,4 +1,4 @@
-# heroes-exercises
+# HeroesApp
 
 ## Project setup
 ```

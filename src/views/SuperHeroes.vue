@@ -1,8 +1,8 @@
 <template>
-  <div class="heroes">
+  <section class="heroes" tabindex="0">
     <h1 class="heroes__title">Heroes</h1>
     <heroes-list :heroes="heroes"></heroes-list>
-  </div>
+  </section>
 </template>
 
 <script>

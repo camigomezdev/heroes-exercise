@@ -1,24 +1,29 @@
 <template>
-  <div
-    class="hero-card" @click="descriptionEvent"
-    :class="{'hero-card--show-description': showDescription}">
-    <div class="hero-card__info">
-      <div class="hero-card__avatar">
-        <img class="hero-card__avatar-img" :src="thumbnail" :alt="name" />
+  <button
+    :id="heroId"
+    @click="descriptionEvent"
+    :aria-expanded="`${showDescription}`"
+    :aria-controls="`${heroId}-description`"
+    class="hero-card"
+    :class="{'hero-card--show-description': showDescription}"
+  >
+    <div class="hero-card__info" :id="name">
+      <div class="hero-card__avatar" :aria-hidden="true" :alt="name">
+        <img class="hero-card__avatar-img" :src="thumbnail"/>
       </div>
       <div class="hero-card__nickname-container">
         <div class="hero-card__nickname">{{name}}</div>
       </div>
     </div>
-    <div class="hero-card__description">
-      <div v-if="description" class="hero-card__description-text">
-        {{description}}
-      </div>
-      <div v-else class="hero-card__description-text">
-        Info not found
-      </div>
+    <div
+      class="hero-card__description"
+      :id="`${heroId}-description`"
+      :aria-hidden="!showDescription"
+    >
+      <div v-if="description" class="hero-card__description-text">{{description}}</div>
+      <div v-else class="hero-card__description-text">Info not found</div>
     </div>
-  </div>
+  </button>
 </template>
 
 <script>
@@ -29,6 +34,7 @@ export default {
     };
   },
   props: {
+    heroId: Number,
     name: String,
     thumbnail: String,
     description: String,
@@ -52,7 +58,7 @@ export default {
   height: 100%;
   cursor: pointer;
   transform-style: preserve-3d;
-  box-shadow: 0px 0px 0px 1px rgba(0,0,0,1);
+  box-shadow: 0px 0px 0px 1px rgba(0, 0, 0, 1);
   border-radius: 5px;
 
   &__info {
@@ -120,7 +126,7 @@ export default {
     transition: transform 1s;
     backface-visibility: hidden;
     transform: rotateY(180deg);
-    transition-timing-function : cubic-bezier(0.175, 0.885, 0.32, 1.275);
+    transition-timing-function: cubic-bezier(0.175, 0.885, 0.32, 1.275);
     border-radius: 5px;
   }
 

@@ -1,4 +1,4 @@
-# HeroesApp
+# MarvelApp
 
 ## Project setup
 ```

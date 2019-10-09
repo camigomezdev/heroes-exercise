@@ -12,9 +12,9 @@ export default new Router({
       component: () => import('./views/Comics.vue'),
     },
     {
-      path: '/heroes',
-      name: 'heroes',
-      component: () => import('./views/SuperHeroes.vue'),
+      path: '/characters',
+      name: 'characters',
+      component: () => import('./views/Characters.vue'),
     },
   ],
 });

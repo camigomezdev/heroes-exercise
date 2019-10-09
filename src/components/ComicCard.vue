@@ -1,7 +1,7 @@
 <template>
   <div class="comic-card">
     <div class="comic-card__avatar">
-      <img class="comic-card__avatar-img" :src="thumbnail" :alt="name" />
+      <img class="comic-card__avatar-img" :src="thumbnail" :alt="name" aria-hidden="true"/>
     </div>
     <div class="comic-card__info">
       <div class="comic-card__nickname">{{name}}</div>

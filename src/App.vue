@@ -34,6 +34,13 @@ body {
   color: white;
 }
 
+button {
+  background: transparent;
+  border: none;
+  color: inherit;
+  font: inherit;
+}
+
 .container {
   padding: 10px 50px;
 }

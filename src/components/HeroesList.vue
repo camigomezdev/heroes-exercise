@@ -3,6 +3,7 @@
     <hero-card
       v-for="hero in heroes"
       :key="hero.id"
+      :heroId="hero.id"
       :name="hero.name"
       :description="hero.description"
       :thumbnail="`${hero.thumbnail.path}.${hero.thumbnail.extension}`"
@@ -28,5 +29,6 @@ export default {
   display: flex;
   flex-wrap: wrap;
   justify-content: flex-start;
+  align-items: flex-start;
 }
 </style>

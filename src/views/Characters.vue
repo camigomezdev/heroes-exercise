@@ -1,8 +1,10 @@
 <template>
-  <section class="characters" tabindex="0">
-    <h1 class="characters__title">Characters</h1>
-    <characters-list :characters="characters"></characters-list>
-  </section>
+  <div class="container">
+    <section class="characters" tabindex="0">
+      <h1 class="characters__title">Characters</h1>
+      <characters-list :characters="characters"></characters-list>
+    </section>
+  </div>
 </template>
 
 <script>

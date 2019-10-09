@@ -1,8 +1,10 @@
 <template>
-  <section class="comics">
-    <h1 class="comics__title">Comics</h1>
-    <comics-carousel :comics="comics"></comics-carousel>
-  </section>
+  <div class="container">
+    <section class="comics">
+      <h1 class="comics__title">Comics</h1>
+      <comics-carousel :comics="comics"></comics-carousel>
+    </section>
+  </div>
 </template>
 
 <script>

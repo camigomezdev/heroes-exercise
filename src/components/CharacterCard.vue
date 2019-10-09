@@ -1,27 +1,27 @@
 <template>
   <button
-    :id="heroId"
+    :id="characterId"
     @click="descriptionEvent"
     :aria-expanded="`${showDescription}`"
-    :aria-controls="`${heroId}-description`"
-    class="hero-card"
-    :class="{'hero-card--show-description': showDescription}"
+    :aria-controls="`${characterId}-description`"
+    class="character-card"
+    :class="{'character-card--show-description': showDescription}"
   >
-    <div class="hero-card__info" :id="name">
-      <div class="hero-card__avatar" :aria-hidden="true" :alt="name">
-        <img class="hero-card__avatar-img" :src="thumbnail"/>
+    <div class="character-card__info" :id="name">
+      <div class="character-card__avatar" :aria-hidden="true" :alt="name">
+        <img class="character-card__avatar-img" :src="thumbnail"/>
       </div>
-      <div class="hero-card__nickname-container">
-        <div class="hero-card__nickname">{{name}}</div>
+      <div class="character-card__nickname-container">
+        <div class="character-card__nickname">{{name}}</div>
       </div>
     </div>
     <div
-      class="hero-card__description"
-      :id="`${heroId}-description`"
+      class="character-card__description"
+      :id="`${characterId}-description`"
       :aria-hidden="!showDescription"
     >
-      <div v-if="description" class="hero-card__description-text">{{description}}</div>
-      <div v-else class="hero-card__description-text">Info not found</div>
+      <div v-if="description" class="character-card__description-text">{{description}}</div>
+      <div v-else class="character-card__description-text">Info not found</div>
     </div>
   </button>
 </template>
@@ -34,7 +34,7 @@ export default {
     };
   },
   props: {
-    heroId: Number,
+    characterId: Number,
     name: String,
     thumbnail: String,
     description: String,
@@ -48,7 +48,7 @@ export default {
 </script>
 
 <style scoped lang="scss">
-.hero-card {
+.character-card {
   position: relative;
   display: flex;
   flex-direction: column;

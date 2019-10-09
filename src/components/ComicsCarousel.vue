@@ -1,14 +1,17 @@
 <template>
-  <div class="comics-carousel">
-    <div
-      class="comics-carousel__arrow comics-carousel__arrow--left"
-      @click="moveCarousel(-1)"
-      :class="{'comics-carousel__arrow--disabled': atHeadOfList}"
-    ></div>
+  <div class="comics-carousel" tabindex="0" @keyup="moveCarouselArrow">
+    <button @click="moveCarousel(-1)" ref="arrowLeft">
+      <div
+        class="comics-carousel__arrow comics-carousel__arrow--left"
+        :class="{'comics-carousel__arrow--disabled': atHeadOfList}"
+        aria-label="Left button"
+      ></div>
+    </button>
     <div class="comics-carousel__container">
       <div class="comics-carousel__cards" :style="{ transform: `translateX(${currentOffset}px)`}">
         <comic-card
-          v-for="comic in comics"
+          v-for="(comic, index) in comics"
+          :tabindex="isVisible(index)"
           :key="comic.id"
           :name="comic.title"
           :description="comic.description"
@@ -17,11 +20,13 @@
         ></comic-card>
       </div>
     </div>
-    <div
-      class="comics-carousel__arrow comics-carousel__arrow--right"
-      @click="moveCarousel(1)"
-      :class="{'comics-carousel__arrow--disabled': atEndOfList}"
-    ></div>
+    <button @click="moveCarousel(1)" ref="arrowRight">
+      <div
+        class="comics-carousel__arrow comics-carousel__arrow--right"
+        :class="{'comics-carousel__arrow--disabled': atEndOfList}"
+        aria-label="Right button"
+      ></div>
+    </button>
   </div>
 </template>
 
@@ -36,6 +41,7 @@ export default {
     return {
       currentOffset: 0,
       windowSize: 4,
+      lastVisible: 4,
       paginationFactor: 210,
     };
   },
@@ -48,8 +54,25 @@ export default {
       // consider using props to make it truly generic
       if (direction === 1 && !this.atEndOfList) {
         this.currentOffset -= this.paginationFactor;
+        this.lastVisible += 1;
       } else if (direction === -1 && !this.atHeadOfList) {
         this.currentOffset += this.paginationFactor;
+        this.lastVisible -= 1;
+      }
+    },
+    isVisible(index) {
+      return (
+        index >= this.lastVisible - this.windowSize
+        && index < this.lastVisible
+      ) ? 0 : 1;
+    },
+    moveCarouselArrow(e) {
+      if (e.keyCode === 39) {
+        this.$refs.arrowRight.focus();
+        this.moveCarousel(1);
+      } else if (e.keyCode === 37) {
+        this.$refs.arrowLeft.focus();
+        this.moveCarousel(-1);
       }
     },
   },

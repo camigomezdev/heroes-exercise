@@ -1,44 +1,44 @@
 <template>
-  <section class="heroes" tabindex="0">
-    <h1 class="heroes__title">Heroes</h1>
-    <heroes-list :heroes="heroes"></heroes-list>
+  <section class="characters" tabindex="0">
+    <h1 class="characters__title">Characters</h1>
+    <characters-list :characters="characters"></characters-list>
   </section>
 </template>
 
 <script>
 import axios from 'axios';
-import heroesList from '@/components/HeroesList.vue';
+import charactersList from '@/components/CharactersList.vue';
 import { urlAPI } from '@/credentials';
 import getAuth from '@/utils/utils';
 
 export default {
   components: {
-    heroesList,
+    charactersList,
   },
   data() {
     return {
-      heroes: [],
+      characters: [],
     };
   },
   methods: {
-    getheroes() {
+    getCharacters() {
       const { ts, hash, publicKey } = getAuth();
       axios
         .get(
           `${urlAPI}characters?limit=30&ts=${ts}&apikey=${publicKey}&hash=${hash}`,
         )
         .then((response) => {
-          this.heroes = response.data.data.results;
+          this.characters = response.data.data.results;
         });
     },
   },
   mounted() {
-    this.getheroes();
+    this.getCharacters();
   },
 };
 </script>
 <style lang="scss">
-.heroes {
+.characters {
 
   &__title {
     padding: 0 10px;

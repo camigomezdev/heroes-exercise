@@ -1,8 +1,8 @@
 <template>
-  <div class="comics">
-    <h1 class="heroes__title">Comics</h1>
+  <section class="comics">
+    <h1 class="comics__title">Comics</h1>
     <comics-carousel :comics="comics"></comics-carousel>
-  </div>
+  </section>
 </template>
 
 <script>

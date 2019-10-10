@@ -45,6 +45,7 @@ export default {
 
   &__info {
     margin: auto 0;
+    padding: 0 5px;
     text-align: center;
   }
 

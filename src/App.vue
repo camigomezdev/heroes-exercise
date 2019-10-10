@@ -1,18 +1,21 @@
 <template>
   <div id="app">
     <navbar></navbar>
-    <keep-alive>
+    <keep-alive class="content">
       <router-view />
     </keep-alive>
+    <Footer></Footer>
   </div>
 </template>
 
 <script>
 import Navbar from '@/components/Navbar.vue';
+import Footer from '@/components/Footer.vue';
 
 export default {
   components: {
     Navbar,
+    Footer,
   },
 };
 </script>
@@ -21,6 +24,7 @@ export default {
 * {
   padding: 0;
   margin: 0;
+  font-family: 'Noto Sans', sans-serif;
 }
 
 body {
@@ -40,6 +44,22 @@ button {
 }
 
 .container {
-  padding: 10px 50px;
+  max-width: 1470px;
+  padding: 30px 0;
+  margin: 0 auto;
+}
+
+.button {
+  background: #ff0000;
+  padding: 10px 15px;
+  border-radius: 10px;
+  cursor: pointer;
+  text-decoration: none;
+  color: white;
+  font-weight: 600;
+}
+
+.content {
+  position: relative;
 }
 </style>

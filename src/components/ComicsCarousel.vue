@@ -96,12 +96,14 @@ export default {
   display: flex;
   justify-content: center;
   align-items: center;
+  padding: 20px 0;
 
   &__container {
     display: flex;
     justify-content: flex-start;
     max-width: 840px;
     overflow: hidden;
+    padding: 15px 0;
   }
 
   &__cards {

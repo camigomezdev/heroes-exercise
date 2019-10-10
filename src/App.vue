@@ -1,11 +1,9 @@
 <template>
   <div id="app">
     <navbar></navbar>
-    <div class="container">
-      <keep-alive>
-        <router-view/>
-      </keep-alive>
-    </div>
+    <keep-alive>
+      <router-view />
+    </keep-alive>
   </div>
 </template>
 
@@ -30,7 +28,7 @@ body {
 }
 
 #app {
-  font-family: 'Avenir', Helvetica, Arial, sans-serif;
+  font-family: "Avenir", Helvetica, Arial, sans-serif;
   color: white;
 }
 

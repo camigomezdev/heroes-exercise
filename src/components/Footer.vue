@@ -1,20 +1,20 @@
 <template>
-  <div class="footer" tabindex="0">
+  <div class="footer">
     <div>Page created by Cami Gómez</div>
     <div>@camigomez35</div>
 
     <div class="footer__social">
       <a href="https://www.instagram.com/camigomez35/"
         target ="_blank"
-        class="footer__icon fa fa-instagram"
+        class="footer__icon"
         aria-label="instagram"
-      ></a>
+      ><font-awesome-icon :icon="['fab', 'instagram']" /></a>
       <a
         href="https://twitter.com/Camigomez318"
         target ="_blank"
-        class="footer__icon fa fa-twitter"
+        class="footer__icon"
         aria-label="twitter"
-      ></a>
+      ><font-awesome-icon :icon="['fab', 'twitter']" /></a>
     </div>
   </div>
 </template>

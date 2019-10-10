@@ -1,7 +1,7 @@
 <template>
   <div id="app">
     <navbar></navbar>
-    <keep-alive class="content">
+    <keep-alive>
       <router-view />
     </keep-alive>
     <Footer></Footer>
@@ -57,9 +57,5 @@ button {
   text-decoration: none;
   color: white;
   font-weight: 600;
-}
-
-.content {
-  position: relative;
 }
 </style>

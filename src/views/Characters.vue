@@ -1,6 +1,6 @@
 <template>
   <div class="container">
-    <section class="characters" tabindex="0">
+    <section class="characters">
       <h1 class="characters__title">Characters</h1>
       <characters-list :characters="characters"></characters-list>
     </section>

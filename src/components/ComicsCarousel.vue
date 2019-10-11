@@ -1,11 +1,15 @@
 <template>
   <div class="comics-carousel" @keyup="moveCarouselArrow">
     <button
-      @click="moveCarousel(-1)" ref="arrowLeft"
+      @click="moveCarousel(-1)"
+      ref="arrowLeft"
       class="comics-carousel__arrow"
-      :class="{'comics-carousel__arrow--disabled': atHeadOfList}"
+      :class="{'comics-carousel__arrow--disabled': shouldDisableLeftArrow}"
       aria-label="Left button"
-      :tabindex="atHeadOfList ? -1 : 0"
+      :tabindex="shouldDisableLeftArrow ? -1 : 0"
+      :aria-hidden="shouldDisableLeftArrow"
+      @focus="toggleFocus('leftArrowFocused')"
+      @blur="toggleFocus('leftArrowFocused')"
     >
       <font-awesome-icon :icon="['fas', 'chevron-left']" />
     </button>
@@ -26,9 +30,12 @@
       @click="moveCarousel(1)"
       ref="arrowRight"
       class="comics-carousel__arrow"
-      :class="{'comics-carousel__arrow--disabled': atEndOfList}"
+      :class="{'comics-carousel__arrow--disabled': shouldDisableRightArrow}"
       aria-label="Right button"
-      :tabindex="atEndOfList ? -1 : 0"
+      :tabindex="shouldDisableRightArrow ? -1 : 0"
+      :aria-hidden="shouldDisableRightArrow"
+      @focus="toggleFocus('rightArrowFocused')"
+      @blur="toggleFocus('rightArrowFocused')"
     >
       <font-awesome-icon :icon="['fas', 'chevron-right']" />
     </button>
@@ -48,6 +55,8 @@ export default {
       windowSize: 4,
       lastVisible: 4,
       paginationFactor: 210,
+      rightArrowFocused: false,
+      leftArrowFocused: false,
     };
   },
   props: {
@@ -64,10 +73,10 @@ export default {
       }
     },
     isVisible(index) {
-      return (
-        index >= this.lastVisible - this.windowSize
+      return index >= this.lastVisible - this.windowSize
         && index < this.lastVisible
-      ) ? 0 : -1;
+        ? 0
+        : -1;
     },
     moveCarouselArrow(e) {
       if (e.keyCode === 39) {
@@ -77,6 +86,9 @@ export default {
         this.$refs.arrowLeft.focus();
         this.moveCarousel(-1);
       }
+    },
+    toggleFocus(arrow) {
+      this[arrow] = !this[arrow];
     },
   },
   computed: {
@@ -88,6 +100,20 @@ export default {
     },
     atHeadOfList() {
       return this.currentOffset === 0;
+    },
+    shouldDisableLeftArrow() {
+      if (this.leftArrowFocused && this.atHeadOfList) {
+        this.$refs.arrowRight.focus();
+      }
+
+      return this.atHeadOfList;
+    },
+    shouldDisableRightArrow() {
+      if (this.rightArrowFocused && this.atEndOfList) {
+        this.$refs.arrowLeft.focus();
+      }
+
+      return this.atEndOfList;
     },
   },
 };
@@ -125,7 +151,7 @@ export default {
     color: #5bf3ae;
 
     &--disabled {
-      opacity: .3;
+      opacity: 0.3;
       pointer-events: none;
     }
   }

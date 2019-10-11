@@ -9,16 +9,16 @@
 </template>
 
 <script>
-import "@/sass/_global.scss";
-import "@/sass/_variables.scss";
-import Navbar from "@/components/Navbar.vue";
-import Footer from "@/components/Footer.vue";
+import '@/sass/_global.scss';
+import '@/sass/_variables.scss';
+import Navbar from '@/components/Navbar.vue';
+import Footer from '@/components/Footer.vue';
 
 export default {
   components: {
     Navbar,
-    Footer
-  }
+    Footer,
+  },
 };
 </script>
 

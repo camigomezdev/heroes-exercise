@@ -23,13 +23,12 @@ export default {
 };
 </script>
 
-<!-- Add "scoped" attribute to limit CSS to this component only -->
 <style scoped lang="scss">
 .nav {
   position: relative;
   width: 100%;
   background: black;
-  z-index: 1;
+  z-index: 2;
 
   &__items {
     position: relative;

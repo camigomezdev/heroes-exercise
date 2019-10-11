@@ -1,6 +1,6 @@
 <template>
   <div class="container">
-    <section class="characters" tabindex="0">
+    <section class="characters">
       <h1 class="characters__title">Characters</h1>
       <characters-list :characters="characters"></characters-list>
     </section>
@@ -27,7 +27,7 @@ export default {
       const { ts, hash, publicKey } = getAuth();
       axios
         .get(
-          `${urlAPI}characters?limit=30&ts=${ts}&apikey=${publicKey}&hash=${hash}`,
+          `${urlAPI}characters?limit=50&ts=${ts}&apikey=${publicKey}&hash=${hash}`,
         )
         .then((response) => {
           this.characters = response.data.data.results;

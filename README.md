@@ -1,5 +1,14 @@
 # MarvelApp
 
+This page is a personal project to learn about Vue.js and a11y.
+
+### We're using:
+
+- Vue.js
+- Vue-cli
+- Sass
+- [Marvel API](https://developer.marvel.com/)
+
 ## Project setup
 ```
 yarn install

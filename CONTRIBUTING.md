@@ -4,7 +4,9 @@ Contributions are **welcome** and will be fully **credited**.
 
 We accept contributions via Pull Requests on [Github](https://github.com/camigomez35/heroes-exercise).
 
+
 ## How to contribute
+
 - If you're working on an **issue**, assign it to yourself or comment on this issue asking for it.
 
 - First of all, fork this repo to yourself, create branches based on which kind of change are you going to work on. You can use "**feature**" or "**hotfix**" for example.
@@ -12,7 +14,6 @@ We accept contributions via Pull Requests on [Github](https://github.com/camigom
 - As soon as you finished, you must run "**git add**", "**git commit -m '{your message here}'**" and "**git push --set-upstream origin feature/{your branch name}**".
 
 - After pushing your code to Github, you can go to "**Pull Requests**" and create a PR for this repo.
-
 
 
 ## Pull Requests
@@ -27,7 +28,8 @@ We accept contributions via Pull Requests on [Github](https://github.com/camigom
 
 
 ## Pull Request Template
-- **[CONTRIBUTING TEMPLATE](CONTRIBUTING_TEMPLATE.md)**.
+
+- **[PR TEMPLATE](PR_TEMPLATE.md)**.
 
 
 **Happy coding**!

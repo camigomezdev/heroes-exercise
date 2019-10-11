@@ -43,11 +43,11 @@
 </template>
 
 <script>
-import ComicCard from "@/components/ComicCard.vue";
+import ComicCard from '@/components/ComicCard.vue';
 
 export default {
   components: {
-    ComicCard
+    ComicCard,
   },
   data() {
     return {
@@ -56,11 +56,11 @@ export default {
       lastVisible: 4,
       paginationFactor: 210,
       rightArrowFocused: false,
-      leftArrowFocused: false
+      leftArrowFocused: false,
     };
   },
   props: {
-    comics: Array
+    comics: Array,
   },
   methods: {
     moveCarousel(direction) {
@@ -73,8 +73,8 @@ export default {
       }
     },
     isVisible(index) {
-      return index >= this.lastVisible - this.windowSize &&
-        index < this.lastVisible
+      return index >= this.lastVisible - this.windowSize
+        && index < this.lastVisible
         ? 0
         : -1;
     },
@@ -89,13 +89,13 @@ export default {
     },
     toggleFocus(arrow) {
       this[arrow] = !this[arrow];
-    }
+    },
   },
   computed: {
     atEndOfList() {
       return (
-        this.currentOffset <=
-        this.paginationFactor * -1 * (this.comics.length - this.windowSize)
+        this.currentOffset
+        <= this.paginationFactor * -1 * (this.comics.length - this.windowSize)
       );
     },
     atHeadOfList() {
@@ -114,8 +114,8 @@ export default {
       }
 
       return this.atEndOfList;
-    }
-  }
+    },
+  },
 };
 </script>
 

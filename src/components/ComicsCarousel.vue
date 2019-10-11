@@ -1,7 +1,8 @@
 <template>
   <div class="comics-carousel" @keyup="moveCarouselArrow">
     <button
-      @click="moveCarousel(-1)" ref="arrowLeft"
+      @click="moveCarousel(-1)"
+      ref="arrowLeft"
       class="comics-carousel__arrow"
       :class="{'comics-carousel__arrow--disabled': shouldDisableLeftArrow}"
       aria-label="Left button"
@@ -42,11 +43,11 @@
 </template>
 
 <script>
-import ComicCard from '@/components/ComicCard.vue';
+import ComicCard from "@/components/ComicCard.vue";
 
 export default {
   components: {
-    ComicCard,
+    ComicCard
   },
   data() {
     return {
@@ -55,11 +56,11 @@ export default {
       lastVisible: 4,
       paginationFactor: 210,
       rightArrowFocused: false,
-			leftArrowFocused: false
+      leftArrowFocused: false
     };
   },
   props: {
-    comics: Array,
+    comics: Array
   },
   methods: {
     moveCarousel(direction) {
@@ -72,10 +73,10 @@ export default {
       }
     },
     isVisible(index) {
-      return (
-        index >= this.lastVisible - this.windowSize
-        && index < this.lastVisible
-      ) ? 0 : -1;
+      return index >= this.lastVisible - this.windowSize &&
+        index < this.lastVisible
+        ? 0
+        : -1;
     },
     moveCarouselArrow(e) {
       if (e.keyCode === 39) {
@@ -87,14 +88,14 @@ export default {
       }
     },
     toggleFocus(arrow) {
-			this[arrow] = !this[arrow];
-		}
+      this[arrow] = !this[arrow];
+    }
   },
   computed: {
     atEndOfList() {
       return (
-        this.currentOffset
-        <= this.paginationFactor * -1 * (this.comics.length - this.windowSize)
+        this.currentOffset <=
+        this.paginationFactor * -1 * (this.comics.length - this.windowSize)
       );
     },
     atHeadOfList() {
@@ -102,21 +103,19 @@ export default {
     },
     shouldDisableLeftArrow() {
       if (this.leftArrowFocused && this.atHeadOfList) {
-        const rightArrow = this.$refs.arrowRight;
-        rightArrow.focus();
+        this.$refs.arrowRight.focus();
       }
 
       return this.atHeadOfList;
     },
     shouldDisableRightArrow() {
       if (this.rightArrowFocused && this.atEndOfList) {
-        const leftArrow = this.$refs.arrowLeft;
-        leftArrow.focus();
+        this.$refs.arrowLeft.focus();
       }
 
       return this.atEndOfList;
     }
-  },
+  }
 };
 </script>
 
@@ -152,7 +151,7 @@ export default {
     color: #5bf3ae;
 
     &--disabled {
-      opacity: .3;
+      opacity: 0.3;
       pointer-events: none;
     }
   }

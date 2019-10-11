@@ -1,5 +1,5 @@
 <template>
-  <div id="app">
+  <div id="app" class="app">
     <navbar></navbar>
     <keep-alive>
       <router-view />
@@ -31,9 +31,14 @@ body {
   background: #2c3e50;
 }
 
-#app {
+.app {
   font-family: "Avenir", Helvetica, Arial, sans-serif;
   color: white;
+  position: relative;
+  height: 100vh;
+  overflow-x: hidden;
+  overflow-y: auto;
+  perspective: 2px;
 }
 
 button {

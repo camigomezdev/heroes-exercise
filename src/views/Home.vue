@@ -72,6 +72,10 @@ export default {
   top: 0;
   left: 0;
 
+  &__section {
+    background-color: #2c3e50;
+  }
+
   &__section:nth-child(odd) {
     background-color: #364c62;
   }

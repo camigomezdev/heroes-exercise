@@ -57,5 +57,10 @@ button {
   text-decoration: none;
   color: white;
   font-weight: 600;
+  transition: background 0.5s;
+
+  &:hover {
+    background: #AA0000;
+  }
 }
 </style>

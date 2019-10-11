@@ -1,5 +1,5 @@
 <template>
-  <div class="hero" tabindex="0">
+  <div class="hero">
     <div class="hero__dark"></div>
     <div class="hero__info">
       <h1 class="hero__title">{{title}}</h1>

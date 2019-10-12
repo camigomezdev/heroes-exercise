@@ -1,0 +1,16 @@
+// A map of breakpoints
+$breakpoints: (
+  sm: 480px,
+  md: 768px,
+  lg: 992px,
+  xl: 1200px
+);
+
+@mixin breakpoint($breakpoint) {
+  // Get the breakpoint value
+  $breakpoint-value: map-get($breakpoints, $breakpoint);
+
+  @media (min-width: $breakpoint-value) {
+    @content;
+  }
+}

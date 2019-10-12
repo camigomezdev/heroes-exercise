@@ -9,8 +9,7 @@
 </template>
 
 <script>
-import '@/sass/_global.scss';
-import '@/sass/_variables.scss';
+import '@/sass/main.scss';
 import Navbar from '@/components/Navbar.vue';
 import Footer from '@/components/Footer.vue';
 

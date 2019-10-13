@@ -1,6 +1,6 @@
 <template>
   <section class="home">
-    <hero title="Marvel" subtitle="Vue.js exercise"></hero>
+    <hero title="Marvel" subtitle="Vue.js exercise" image="/background.jpeg"></hero>
     <div class="home__section">
       <div class="container">
         <h1>Characters</h1>
@@ -71,6 +71,10 @@ export default {
   position: relative;
   top: 0;
   left: 0;
+
+  &__section {
+    background-color: #2c3e50;
+  }
 
   &__section:nth-child(odd) {
     background-color: #364c62;

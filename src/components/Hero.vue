@@ -5,7 +5,7 @@
       <h1 class="hero__title">{{title}}</h1>
       <h3 class="hero__subtitle">{{subtitle}}</h3>
     </div>
-    <parallax speedFactor="0.3">
+    <parallax :speedFactor="0.3">
       <img :src="image">
     </parallax>
   </div>
@@ -29,10 +29,6 @@ export default {
 <style lang="scss" scoped>
 .hero {
   position: relative;
-  background-position: center;
-  background-repeat: no-repeat;
-  background-size: cover;
-  background-attachment: fixed;
   width: 100vw;
   height: 80vh;
 
@@ -40,7 +36,7 @@ export default {
     position: absolute;
     width: 100%;
     height: 100%;
-    background: rgba($color: #000000, $alpha: 0.5)
+    background: rgba(0, 0, 0, 0.5);
   }
 
   &__info {

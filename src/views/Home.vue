@@ -1,6 +1,6 @@
 <template>
   <section class="home">
-    <hero title="Marvel" subtitle="Vue.js exercise" image="/background.jpeg"></hero>
+    <hero title="Marvel" subtitle="Vue.js exercise" image="./background.jpeg"></hero>
     <div class="home__section">
       <div class="container">
         <h1>Characters</h1>

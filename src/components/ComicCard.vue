@@ -27,13 +27,13 @@ export default {
   flex-wrap: wrap;
   margin: 0 5px;
   width: 200px;
-  background: black;
+  background: $black;
   cursor: pointer;
 
   &__avatar {
     height: 200px;
     overflow: hidden;
-    border-bottom: 5px solid red;
+    border-bottom: 5px solid $red;
   }
 
   &__avatar-img {

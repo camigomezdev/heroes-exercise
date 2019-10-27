@@ -27,7 +27,7 @@
   align-items: center;
   width: 100%;
   height: 20vh;
-  background: black;
+  background: $black;
   bottom: 0;
 
   &__social {
@@ -38,7 +38,7 @@
     font-size: 30px;
     padding: 5px;
     text-decoration: none;
-    color: white;
+    color: $white;
   }
 }
 </style>

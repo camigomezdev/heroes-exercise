@@ -148,7 +148,7 @@ export default {
     transition: opacity 0.5s ease-in-out;
     cursor: pointer;
     font-size: 30px;
-    color: #5bf3ae;
+    color: $aquamarine;
 
     &--disabled {
       opacity: 0.3;

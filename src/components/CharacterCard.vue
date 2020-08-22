@@ -70,7 +70,7 @@ export default {
   &__avatar {
     margin: 0 auto;
     height: 200px;
-    border-bottom: 5px solid red;
+    border-bottom: 5px solid $red;
   }
 
   &__avatar-img {
@@ -99,7 +99,7 @@ export default {
   &__nickname-container::before {
     content: "";
     position: absolute;
-    background: red;
+    background: $red;
     height: 100%;
     transform: scaleY(0);
     transform-origin: top;

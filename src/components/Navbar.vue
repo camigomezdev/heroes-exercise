@@ -27,7 +27,7 @@ export default {
 .nav {
   position: relative;
   width: 100%;
-  background: black;
+  background: $black;
   z-index: 2;
 
   &__items {
@@ -37,13 +37,13 @@ export default {
 
   &__link {
     font-weight: bold;
-    color: white;
+    color: $white;
     padding: 0 5px;
     text-transform: uppercase;
     text-decoration: none;
 
     &.router-link-exact-active {
-      color: #5bf3ae;
+      color: $aquamarine;
     }
   }
 }

@@ -13,8 +13,8 @@ jobs:
     steps:
       - name: Print a greeting
         run: echo Hello, world.
-      - name: Install dependencies
-        run: pwd
+      - name: Print file direction
+        run: echo pwd
       - name: Install dependencies
         run: npm install
       - name: Build project

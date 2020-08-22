@@ -19,5 +19,4 @@ jobs:
           npm install
       - name: Deploy
         run: |
-          sh deploy.sh
-          
+          sh ./deploy.sh

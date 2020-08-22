@@ -1,5 +1,5 @@
 module.exports = {
-  publicPath: '/',
+  publicPath: '/heroes-excercise/',
   css: {
     loaderOptions: {
       sass: {

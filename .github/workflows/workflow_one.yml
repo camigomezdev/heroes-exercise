@@ -12,11 +12,15 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: Print a greeting
-        run: |
-          echo Hello, world.
+        run: echo Hello, world.
       - name: Install dependencies
-        run: |
-          npm install
+        run: npm install
+      - name: Build project
+        run: npm run build
       - name: Deploy
         run: |
-          sh ./deploy.sh
+          cd dist
+          git init
+          git add -A
+          git commit -m 'deploy'
+          git push -f https://github.com/camigomezdev/heroes-exercise.git master:gh-pages

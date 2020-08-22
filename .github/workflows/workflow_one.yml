@@ -1,0 +1,23 @@
+name: first github action
+on:
+  push:
+    branches:
+      - master
+  pull_request:
+    branches:
+      - master
+jobs:
+  my_first_job:
+    name: My first job
+    runs-on: ubuntu-latest
+    steps:
+      - name: Print a greeting
+        run: |
+          echo Hello, world.
+      - name: Install dependencies
+        run: |
+          npm install
+      - name: Deploy
+        run: |
+          sh deploy.sh
+          

@@ -27,7 +27,7 @@ export default {
       const { ts, hash, publicKey } = getAuth();
       axios
         .get(
-          `${urlAPI}characters?limit=50&ts=${ts}&apikey=${publicKey}&hash=${hash}`,
+          `${urlAPI}characters?orderBy=modified&limit=50&ts=${ts}&apikey=${publicKey}&hash=${hash}`,
         )
         .then((response) => {
           this.characters = response.data.data.results;

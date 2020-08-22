@@ -3,6 +3,7 @@
     <section class="comics">
       <h1 class="comics__title">Comics</h1>
       <comics-carousel :comics="comics"></comics-carousel>
+      <comic-description/>
     </section>
   </div>
 </template>
@@ -10,12 +11,14 @@
 <script>
 import axios from 'axios';
 import ComicsCarousel from '@/components/ComicsCarousel.vue';
+import ComicDescription from '@/components/ComicDescription.vue';
 import { urlAPI } from '@/credentials';
 import getAuth from '@/utils/utils';
 
 export default {
   components: {
     ComicsCarousel,
+    ComicDescription,
   },
   data() {
     return {
@@ -27,7 +30,7 @@ export default {
       const { ts, hash, publicKey } = getAuth();
       axios
         .get(
-          `${urlAPI}comics?limit=10&ts=${ts}&apikey=${publicKey}&hash=${hash}`,
+          `${urlAPI}comics?orderBy=modified&limit=10&ts=${ts}&apikey=${publicKey}&hash=${hash}`,
         )
         .then((response) => {
           this.comics = response.data.data.results;
